@@ -53,10 +53,10 @@ let originalScores =
 
 //Splits the given input into smaller arrays
 let schools = originalScores.split("\n");
+let scores = originalScores.split(", ");
 for (i = 0; i < schools.length; i++) {
     schools[i] = schools[i].split(", ");
 }
-let scores = originalScores.split(", ")
 
 //Declaring everything that will be called later
 let schoolAverages = [];
@@ -130,16 +130,8 @@ function questionFour() {
     for (i = 0; i < schoolAverages.length; i++) {
         for (j = 0; j < schoolAverages.length; j++) {
             if (schoolAverages[i] == orderedAverages[j]) {
-                //largest score(a) - smallest score(b) = large difference(d)
-                //current score(c) - samllest score(b) = difference(e)
-                //difference(e) / large difference(d) = score(f)
-                //score(f) + 1 = new score(g)
-                //new score * 50 = h
-
                 let answer = (((schoolAverages[i] - smallestScore) / (largestScore - smallestScore)) + 1) * 50;
-                //I'm trying to put the values back into the array
-                //schoolAverages[i].splice(answer.toFixed(2));
-                console.log(answer.toFixed(2));
+                schoolAverages[i] = answer.toFixed(2);
             }
         }
     }
@@ -165,32 +157,8 @@ function questionFive() {
             }
         }
     }
-    console.log(scores)    
+    console.log(scores);
 }
 
 
-questionFour();
-
-
-/*
-function percent(largestScore, smallestScore, currentScore) {
-    let answer = (((currentScore - smallestScore) / (largestScore - smallestScore)) + 1) * 50;
-
-    console.log(answer);
-}
-
-percent(1000, 600, 800);
-*/
-/*
-largest score(a) - smallest score(b) = large difference(d)
-current score(c) - samllest score(b) = difference(e)
-difference(e) / large difference(d) = score(f)
-score(f) + 1 = new score(g)
-new score * 50 = h
-*/
-
-/*
-(1399+830+706+1241+1440+1539+1279+1168+1402+1591)/10
-(1113+1401+403+513+1196+813+1105+659+1533+1134)/10
-(1275+1363+764+1225+1080+1351+709+875+1549+1441)/10
-*/
+questionFive();
