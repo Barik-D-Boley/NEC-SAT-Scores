@@ -138,7 +138,7 @@ function questionFour() {
 
 function questionFive() {
     let orderedScores = [];
-    let scoresTable = [][];
+    let scoresTable = schools;
     //Reorder the table of scores, then compare each unordered item against every ordered item to see where they lie, and reassigns them at that position
     let scores = input.replace(/\n/g, ", ").split(", ");
 
@@ -161,7 +161,6 @@ function questionFive() {
             }
         }
     }
-    console.log(scores);
 
     //Split every 10 scores into rows, then split those rows into 10 peices
     let k = 0;
@@ -175,4 +174,8 @@ function questionFive() {
     console.table(scoresTable);
 }
 
+questionOne();
+questionTwo();
+questionThree();
+questionFour();
 questionFive();
